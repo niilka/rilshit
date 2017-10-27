@@ -58,6 +58,24 @@ html(lang='ru')
             .room-info
               a.room-title Game mode Name
               a.room-description Short description
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
         .links
           a.twitter(href="#")
             +svg-icon('twitter',42,'#acacac')
@@ -135,5 +153,6 @@ html(lang='ru')
           input(type="text", placeholder="Type a message here...").message-input 
       .all-bets
         include pug/modules/_table.pug
+      include pug/modules/_footer.pug
     link(rel='stylesheet', href='css/index.min.css')
     script(src='scripts/scripts.min.js')
