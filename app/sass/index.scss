@@ -37,6 +37,7 @@
         padding-top: 0px;
         height: 100%;
         vertical-align: top;
+        text-decoration: none;
         .main-title {
             font-weight: 700;
             margin: 0;
@@ -70,6 +71,9 @@
                 li {
                     display: inline-block;
                     margin-right: 12px;
+                    &:hover a {
+                        color: darken(#e6e6e6, 10%);
+                    }
                     a {
                         text-decoration: none;
                         font-size: 20px;
@@ -84,6 +88,9 @@
             font-weight: 300;
             text-decoration: none;
             display: inline-block;
+            &:hover {
+                color: lighten(#b9b9b9, 5%);
+            }
             .icon {
                 padding-right: 2px;
             }
@@ -100,6 +107,7 @@
             font-weight: 300;
             font-size: 20px;
             position: relative;
+            text-decoration: none;
             .globe {
                 vertical-align: middle;
                 padding-right: 5px;
@@ -135,12 +143,14 @@
             .profile-nickname {
                 color: #f7f7f7;
                 font-size: 16px;
+                text-decoration: none;
             }
             .profile-balance {
                 font-size: 13px;
                 color: #b9b9b9;
                 line-height: 9px;
                 padding-left: 10px;
+                text-decoration: none;
                 &::before {
                     content: 'B';
                     font-family: 'BTC';

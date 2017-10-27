@@ -25,7 +25,7 @@ html(lang='ru')
       header.site-header
         .logo
          img.logotype(src='images/header/logo.png', alt='Bitcoin Gambling')
-        .header-title
+        a(href="#").header-title
           h1.main-title itcoin Gambling
           p.sub-title Life is but a gamble! Let flipism chart your ramble!
         .header-stats
@@ -41,7 +41,7 @@ html(lang='ru')
            +svg-icon('stats',13, '#b9b9b9')
            span 1 BTC - 900 USD
         .language-picker
-          a.language
+          a(href="#").language
             +svg-icon('globe',20, '#b9b9b9').globe
             span ENG
             +svg-icon('more',10, '#b9b9b9').more
@@ -49,9 +49,10 @@ html(lang='ru')
           .profile-avatar
             +svg-icon('noavatar',53,'#b9b9b9').avatar
           .profile-stats
-            a.profile-nickname Your Nickname
+            a(href="#").profile-nickname Your Nickname
+              
               +svg-icon('more',10,'#b9b9b9').more
-            span.profile-balance 0,0124586
+            a(href="#").profile-balance 0,0124586
 
 
     link(rel='stylesheet', href='css/index.min.css')
