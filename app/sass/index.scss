@@ -286,15 +286,30 @@
     right: 0;
     top: 98px;
     background-color: #4d4d4d;
+    overflow: hidden;
     &.is-collapsed {
         width: 19px;
         .top-line {
             padding-top: 2px;
             text-align: center;
         }
+        .left-line {
+            background-color: #4d4d4d;
+            .icon {
+                visibility: hidden;
+            }
+            visibility: hidden;
+        }
     }
     &.is-large {
         width: 266px;
+        .peoples {
+            li {
+                &:not(:last-child) {
+                    border-bottom: 1px solid #3d3d3d;
+                }
+            }
+        }
         .top-line {
             padding-top: 2px;
             padding-left: 8px;
@@ -304,14 +319,14 @@
             .top-bar-title {
                 display: inline-block;
             }
+            .icon {
+                position: absolute;
+                top: 2px;
+                left: 8px;
+            }
         }
         .top-bar-label {
             display: none;
-        }
-        .icon {
-            position: absolute;
-            top: 2px;
-            left: 8px;
         }
     }
     .top-bar-label {
@@ -337,55 +352,44 @@
     }
     .peoples {
         display: flex;
-        justify-content: space-around;
-        overflow: hidden;
-        position: relative;
-        z-index: 2;
-        img {
-            overflow: hidden;
-            position: relative;
-            z-index: 1;
-            border-radius: 36em;
-        }
-        &>div {
-            width: 80px;
-            height: 80px;
-            border-radius: 36em;
-            position: relative;
-            margin-top: 12px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+        li {
+            height: 39px;
+            width: 100%;
             display: flex;
-            justify-content: center;
-            .ribbon {
-                position: absolute;
-                width: 30px;
-                height: 20px;
-                z-index: 0;
-                top: -14px;
-                left: 22px;
-                border-left: 1px solid rgba(0, 0, 0, 0.1);
-                border-right: 1px solid rgba(0, 0, 0, 0.1);
-                .icon {
-                    position: absolute;
-                    top: -7px;
-                    left: 9px;
-                }
+            align-items: center;
+            .left-line {
+                background-color: #333333;
+                width: 29px;
+                height: 39px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .icon {}
             }
-            &.last-winner {
-                border: 2px solid #c31818;
-                .ribbon {
-                    background-color: #c31818;
-                }
+            .nickname {
+                text-decoration: none;
+                color: #c8c7c7;
+                padding-left: 20px;
             }
-            &.biggest-bet {
-                border: 2px solid #f7931a;
-                .ribbon {
-                    background-color: #f7931a;
-                }
-            }
-            &.highrest-bet {
-                border: 2px solid #44b347;
-                .ribbon {
-                    background-color: #44b347;
+            .money {
+                text-decoration: none;
+                color: #646464;
+                background-color: #fafafa;
+                border: 1px solid #646464;
+                border-radius: 15px;
+                line-height: 1.2;
+                font-size: 12px;
+                padding: 2px;
+                margin-left: 10px;
+                font-style: italic;
+                &::after {
+                    content: "B";
+                    font-family: "BTC";
+                    padding-left: 3px;
                 }
             }
         }

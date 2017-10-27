@@ -72,19 +72,22 @@ html(lang='ru')
             +svg-icon('left-arrow',13,'#ef9e5b')
           a(href="#").top-bar-title Today's Top
         span.top-bar-label TOP
-        .peoples
-          .last-winner
-            .ribbon
-              +svg-icon('king',10,'rgba(0,0,0,0.41)')
-            img.last-winner-avatar(src="images/top-bar/peoples/people-1.png")
-          .biggest-bet
-            .ribbon
-              +svg-icon('coins',10,'rgba(0,0,0,0.41)')
-            img.biggest-bet-avatar(src="images/top-bar/peoples/people-2.png")
-          .highrest-bet
-            .ribbon
-              +svg-icon('money-bag',10,'rgba(0,0,0,0.41)')
-            img.highrest-bet-avatar(src="images/top-bar/peoples/people-3.png")
+        ul.peoples
+          li.last-winner
+            .left-line
+              +svg-icon('king',13,'#c31818')
+            a(href="#").nickname nickname
+            a(href="#").money 0,100000
+          li.biggest-bet
+            .left-line
+              +svg-icon('coins',13,'#e78b1c')
+            a(href="#").nickname nickname
+            a(href="#").money 0,100000
+          li.highest-bet
+            .left-line
+              +svg-icon('money-bag',13,'#44b347')
+            a(href="#").nickname nickname
+            a(href="#").money 0,100000
       aside.chat-bar.is-collapsed
         .top-line
           a(href="#").chat-bar-collapse
