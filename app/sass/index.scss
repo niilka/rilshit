@@ -300,6 +300,9 @@
             }
             visibility: hidden;
         }
+        .top-of-all {
+            visibility: hidden;
+        }
     }
     &.is-large {
         width: 266px;
@@ -309,6 +312,9 @@
                     border-bottom: 1px solid #3d3d3d;
                 }
             }
+        }
+        .top-of-all {
+            visibility: visible;
         }
         .top-line {
             padding-top: 2px;
@@ -415,11 +421,15 @@
     right: 0;
     top: 244px;
     background-color: #e6e6e6;
+    overflow: hidden;
     &.is-collapsed {
         width: 19px;
         .top-line {
             padding-top: 2px;
             text-align: center;
+        }
+        .message-sent {
+            visibility: hidden;
         }
     }
     &.is-large {
@@ -442,6 +452,12 @@
             top: 2px;
             left: 8px;
         }
+        .message-sent {
+            visibility: visible;
+        }
+        .messages {
+            border-bottom: 1px solid #9c9c9c;
+        }
     }
     .chat-bar-label {
         position: absolute;
@@ -462,6 +478,74 @@
             text-decoration: none;
             color: #8c8c8c;
             display: none;
+        }
+    }
+    .message-sent {
+        width: 100%;
+        height: 45px;
+        background-color: #d8d9d9;
+        position: absolute;
+        bottom: 0;
+        border-top: 1px solid #efefef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .message-input {
+            outline: none;
+            border: 1px solid #7e7e7e;
+            border-radius: 3px;
+            width: 243px;
+            height: 32px;
+            font-style: italic;
+            font-size: 13px;
+            font-weight: 300;
+            padding-left: 8px;
+        }
+    }
+    .messages {
+        padding: 20px;
+        height: 402px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .message-block {
+            .user-meta {
+                display: flex;
+                justify-content: space-between;
+                .nickname {
+                    font-size: 16px;
+                    text-decoration: none;
+                    color: #646464;
+                }
+                .message-time {
+                    font-size: 16px;
+                    color: #646464;
+                }
+            }
+            .message {
+                background-color: #dbdbdb;
+                padding: 2px 5px;
+                font-weight: 300;
+                color: #646464;
+                font-size: 13px;
+                font-style: italic;
+                border-radius: 6px;
+                position: relative;
+                z-index: 2;
+                padding-left: 11px;
+                &::before {
+                    position: absolute;
+                    top: -8px;
+                    left: -15px;
+                    content: "";
+                    border: 10px solid transparent;
+                    border-right: 20px solid #dbdbdb;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    transform: rotate(45deg);
+                    z-index: 1;
+                }
+            }
         }
     }
 }
