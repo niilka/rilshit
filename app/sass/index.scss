@@ -159,3 +159,115 @@
         }
     }
 }
+
+.left-bar {
+    background-color: #4d4d4d;
+    height: 622px;
+    position: fixed;
+    box-shadow: 15px 0px 163px -31px rgba(0, 0, 0, 0.75);
+    .top-line {
+        background-color: #333333;
+        height: 29px;
+        width: 100%;
+        display: flex;
+    }
+    &.iscollapsed {
+        width: 97px;
+        .top-line {
+            justify-content: center;
+            .left-bar-collapse {
+                padding-top: 2px;
+            }
+        }
+    }
+    &.large {
+        width: 303px;
+        .top-line {
+            justify-content: flex-end;
+            .left-bar-collapse {
+                padding-top: 2px;
+                margin-right: 20px;
+            }
+        }
+    }
+    .rooms {
+        .room {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+                background-color: #3e3e3e;
+                cursor: pointer;
+            }
+            .room-logo {
+                width: 77px;
+                height: 77px;
+                border-radius: 8px;
+                border: 2px solid #d49561;
+                background-color: #646464;
+                background-image: url('../images/left-bar/room-shape.png');
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .room-info {
+                padding-left: 20px;
+                display: none;
+                .room-title {
+                    font-size: 19px;
+                    line-height: 19px;
+                    font-weight: 700;
+                    color: #b9b9b9;
+                    display: block;
+                }
+                .room-description {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #b9b9b9;
+                }
+            }
+        }
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+        &.large {
+            flex-direction: row;
+            margin-top: 40px;
+        }
+        .vk,
+        .twitter {
+            .icon {}
+        }
+    }
+}
+
+.roulette-plate {
+    background-color: #c6c6c6;
+    width: 100%;
+    height: 622px;
+    .top-line {
+        height: 29px;
+        width: 100%;
+        background-color: #3b3b3b;
+        font-size: 13px;
+        font-weight: 700;
+        color: #8c8c8c;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .room-name {
+            text-decoration: none;
+            color: #8c8c8c;
+            &:hover {
+                color: lighten(#8c8c8c, 10%);
+            }
+        }
+    }
+}

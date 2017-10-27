@@ -61,6 +61,7 @@ gulp.task('pug', function () {
 
 gulp.task('scripts', function () {
   return gulp.src([
+      'app/libs/jquery.js',
       'app/scripts/scripts.js',
     ])
     .pipe(concat('scripts.min.js'))
