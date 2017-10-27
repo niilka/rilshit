@@ -1,0 +1,33 @@
+header.site-header
+  
+        .logo
+         img.logotype(src='images/header/logo.png', alt='Bitcoin Gambling')
+        a(href="#").header-title
+          h1.main-title itcoin Gambling
+          p.sub-title Life is but a gamble! Let flipism chart your ramble!
+
+        .header-stats
+          nav.header-navigation
+            ul
+              li
+                a(href="#") TOS
+              li
+                a(href="#") FAQ
+              li
+                a(href="#") Contact Us
+          a.header-cource(href='#')
+           +svg-icon('stats',13, '#b9b9b9')
+           span 1 BTC - 900 USD
+        .language-picker
+          a(href="#").language
+            +svg-icon('globe',20, '#b9b9b9').globe
+            span ENG
+            +svg-icon('more',10, '#b9b9b9').more
+        .profile
+          .profile-avatar
+            +svg-icon('noavatar',53,'#b9b9b9').avatar
+          .profile-stats
+            a(href="#").profile-nickname Your Nickname
+              
+              +svg-icon('more',10,'#b9b9b9').more
+            a(href="#").profile-balance 0,0124586

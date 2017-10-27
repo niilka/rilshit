@@ -22,38 +22,7 @@ html(lang='ru')
     
   body
     main.site
-      header.site-header
-        .logo
-         img.logotype(src='images/header/logo.png', alt='Bitcoin Gambling')
-        a(href="#").header-title
-          h1.main-title itcoin Gambling
-          p.sub-title Life is but a gamble! Let flipism chart your ramble!
-        .header-stats
-          nav.header-navigation
-            ul
-              li
-                a(href="#") TOS
-              li
-                a(href="#") FAQ
-              li
-                a(href="#") Contact Us
-          a.header-cource(href='#')
-           +svg-icon('stats',13, '#b9b9b9')
-           span 1 BTC - 900 USD
-        .language-picker
-          a(href="#").language
-            +svg-icon('globe',20, '#b9b9b9').globe
-            span ENG
-            +svg-icon('more',10, '#b9b9b9').more
-        .profile
-          .profile-avatar
-            +svg-icon('noavatar',53,'#b9b9b9').avatar
-          .profile-stats
-            a(href="#").profile-nickname Your Nickname
-              
-              +svg-icon('more',10,'#b9b9b9').more
-            a(href="#").profile-balance 0,0124586
-
+      include pug/modules/_header.pug
       aside.left-bar.iscollapsed
         .top-line
           a(href="#").left-bar-collapse
@@ -97,7 +66,31 @@ html(lang='ru')
       .roulette-plate
         .top-line
           a(href="#").room-name Room #34 - Game mode Name - Players 9/10
-
+      aside.top-bar.is-collapsed
+        .top-line
+          a(href="#").top-bar-collapse
+            +svg-icon('left-arrow',13,'#ef9e5b')
+          a(href="#").top-bar-title Today's Top
+        span.top-bar-label TOP
+        .peoples
+          .last-winner
+            .ribbon
+              +svg-icon('king',10,'rgba(0,0,0,0.41)')
+            img.last-winner-avatar(src="images/top-bar/peoples/people-1.png")
+          .biggest-bet
+            .ribbon
+              +svg-icon('coins',10,'rgba(0,0,0,0.41)')
+            img.biggest-bet-avatar(src="images/top-bar/peoples/people-2.png")
+          .highrest-bet
+            .ribbon
+              +svg-icon('money-bag',10,'rgba(0,0,0,0.41)')
+            img.highrest-bet-avatar(src="images/top-bar/peoples/people-3.png")
+      aside.chat-bar.is-collapsed
+        .top-line
+          a(href="#").chat-bar-collapse
+            +svg-icon('left-arrow',13,'#ef9e5b')
+          a(href="#").chat-bar-title Chat
+        span.chat-bar-label Chat
 
     link(rel='stylesheet', href='css/index.min.css')
     script(src='scripts/scripts.min.js')
