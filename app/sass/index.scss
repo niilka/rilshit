@@ -1,5 +1,151 @@
-@import url('base/_index.scss');
-@import url('layout/_index.scss');
-@import url('modules/_index.scss');
-@import url('states/_index.scss');
-@import url('utilites/_index.scss');
+@import "reset";
+@import "base";
+@import "fonts";
+@import "vars";
+@import "media";
+.site {
+    max-width: 1136px;
+    margin: 0 auto;
+}
+
+.site-header {
+    height: 97px;
+    width: 100%;
+    background-color: #4d4d4d;
+    .logo {
+        width: 97px;
+        background-color: #efefef;
+        background-image: url('../images/header/logo-pattern.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        .logotype {
+            border: 2px dashed #d5d5d5;
+            border-radius: 8px;
+        }
+    }
+    .header-title {
+        font-family: 'Ubuntu';
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #cacaca;
+        padding-left: 27px;
+        padding-top: 0px;
+        height: 100%;
+        vertical-align: top;
+        .main-title {
+            font-weight: 700;
+            margin: 0;
+            margin-top: -10px;
+            font-size: 44px;
+            transform: skewX(-10deg);
+            &::before {
+                content: 'B';
+                font-family: 'BTC';
+                color: #f3993e;
+            }
+        }
+        .sub-title {
+            font-weight: 300;
+            font-size: 13px;
+            transform: skewX(-12deg);
+            margin: 0;
+            padding-left: 32px;
+            margin-top: -21px;
+        }
+    }
+    .header-stats {
+        display: inline-block;
+        height: 100%;
+        vertical-align: top;
+        margin-left: 55px;
+        text-align: center;
+        .header-navigation {
+            margin-top: 17px;
+            ul {
+                li {
+                    display: inline-block;
+                    margin-right: 12px;
+                    a {
+                        text-decoration: none;
+                        font-size: 20px;
+                        color: #e6e6e6;
+                    }
+                }
+            }
+        }
+        .header-cource {
+            font-size: 16px;
+            color: #b9b9b9;
+            font-weight: 300;
+            text-decoration: none;
+            display: inline-block;
+            .icon {
+                padding-right: 2px;
+            }
+        }
+    }
+    .language-picker {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-left: 48px;
+        .language {
+            display: inline-block;
+            color: #b9b9b9;
+            font-weight: 300;
+            font-size: 20px;
+            position: relative;
+            .globe {
+                vertical-align: middle;
+                padding-right: 5px;
+            }
+            .more {
+                position: absolute;
+                right: -14px;
+                top: -1px;
+            }
+        }
+    }
+    .profile {
+        display: inline-flex;
+        vertical-align: top;
+        height: 100%;
+        align-items: center;
+        margin-left: 30px;
+        .profile-avatar {
+            align-items: center;
+            width: 65px;
+            height: 65px;
+            border: 2px solid #40a44e;
+            border-radius: 36em;
+            justify-content: center;
+            display: flex;
+            padding-top: 16px;
+            overflow: hidden;
+        }
+        .profile-stats {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            .profile-nickname {
+                color: #f7f7f7;
+                font-size: 16px;
+            }
+            .profile-balance {
+                font-size: 13px;
+                color: #b9b9b9;
+                line-height: 9px;
+                padding-left: 10px;
+                &::before {
+                    content: 'B';
+                    font-family: 'BTC';
+                }
+            }
+        }
+    }
+}
