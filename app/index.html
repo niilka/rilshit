@@ -17,6 +17,7 @@
     <meta name="msapplication-navbutton-color" content="#000">
     <!-- iOS Safari-->
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <link rel="stylesheet" href="css/index.min.css">
   </head>
   <body>
     <main class="site">
@@ -49,10 +50,26 @@
                 <use xlink:href="images/icons/svg/sprite/sprite.svg#noavatar"></use>
               </svg></span>
           </div>
-          <div class="profile-stats"><a class="profile-nickname" href="#">Your Nickname<span class="icon more" aria-hidden="true">
+          <div class="profile-stats"><a class="profile-nickname" href="#">Your Nickname         <span class="icon more" aria-hidden="true">
                 <svg viewBox="0 0 10 10" width="10" height="10" fill="#b9b9b9">
                   <use xlink:href="images/icons/svg/sprite/sprite.svg#more"></use>
-                </svg></span></a><a class="profile-balance" href="#">0,0124586</a></div>
+                </svg></span>
+              <div class="profile-popup">
+                <ul>
+                  <li><a href="#"><span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 14 14" width="14" height="14" fill="#4d4d4d">
+                          <use xlink:href="images/icons/svg/sprite/sprite.svg#profile"></use>
+                        </svg></span>Profile</a></li>
+                  <li><a href="#"><span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 14 14" width="14" height="14" fill="#4d4d4d">
+                          <use xlink:href="images/icons/svg/sprite/sprite.svg#settings"></use>
+                        </svg></span>Settings</a></li>
+                  <li><a href="#"><span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 14 14" width="14" height="14" fill="#4d4d4d">
+                          <use xlink:href="images/icons/svg/sprite/sprite.svg#logout"></use>
+                        </svg></span>Logout</a></li>
+                </ul>
+              </div></a><a class="profile-balance" href="#">0,0124586</a></div>
         </div>
       </header>
       <aside class="left-bar iscollapsed">
@@ -94,16 +111,11 @@
             <div class="room-info"><a class="room-title">Game mode Name</a><a class="room-description">Short description</a></div>
           </div>
         </div>
-        <div class="links"><a class="twitter" href="#"><span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 42 42" width="42" height="42" fill="#acacac">
-                <use xlink:href="images/icons/svg/sprite/sprite.svg#twitter"></use>
-              </svg></span></a><a class="vk" href="#"><span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 42 42" width="42" height="42" fill="#acacac">
-                <use xlink:href="images/icons/svg/sprite/sprite.svg#vk"></use>
-              </svg></span></a></div>
       </aside>
-      <div class="roulette-plate">
-        <div class="top-line"><a class="room-name" href="#">Room #34 - Game mode Name - Players 9/10</a></div>
+      <div class="window-plate">
+        <div class="roulette-plate">
+          <div class="top-line"><a class="room-name" href="#">Room #34 - Game mode Name - Players 9/10</a></div>
+        </div>
       </div>
       <aside class="top-bar is-collapsed">
         <div class="top-line"><a class="top-bar-collapse" href="#"><span class="icon" aria-hidden="true">
@@ -187,7 +199,10 @@
           <input class="message-input" type="text" placeholder="Type a message here...">
         </div>
       </aside>
-      <div class="all-bets">
+      <div class="all-bets visible"><a class="show-bets"><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 13 13" width="13" height="13" fill="#ef9e5b">
+              <use xlink:href="images/icons/svg/sprite/sprite.svg#left-arrow"></use>
+            </svg></span></a>
         <div class="table-header">
           <table cellpadding="0" cellspacing="0" border="0">
             <thead>
@@ -311,7 +326,6 @@
         </nav><span class="copyright">Copyright&copy 2017 Company Name, All Rights Reserved.</span>
       </footer>
     </main>
-    <link rel="stylesheet" href="css/index.min.css">
     <script src="scripts/scripts.min.js"></script>
   </body>
 </html>

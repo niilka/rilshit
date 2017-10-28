@@ -19,7 +19,7 @@ html(lang='ru')
     meta(name='msapplication-navbutton-color', content='#000')
     // iOS Safari
     meta(name='apple-mobile-web-app-status-bar-style', content='#000')
-    
+    link(rel='stylesheet', href='css/index.min.css')
   body
     main.site
       include pug/modules/_header.pug
@@ -76,14 +76,10 @@ html(lang='ru')
             .room-info
               a.room-title Game mode Name
               a.room-description Short description
-        .links
-          a.twitter(href="#")
-            +svg-icon('twitter',42,'#acacac')
-          a.vk(href="#")
-            +svg-icon('vk',42,'#acacac')
-      .roulette-plate
-        .top-line
-          a(href="#").room-name Room #34 - Game mode Name - Players 9/10
+      .window-plate
+        .roulette-plate
+          .top-line
+            a(href="#").room-name Room #34 - Game mode Name - Players 9/10
       aside.top-bar.is-collapsed
         .top-line
           a(href="#").top-bar-collapse
@@ -151,8 +147,10 @@ html(lang='ru')
             p.message 93% of the people who quit too soon are employed by the 3% who never gave up.
         .message-sent
           input(type="text", placeholder="Type a message here...").message-input 
-      .all-bets
+      .all-bets.visible
+        a.show-bets
+          +svg-icon('left-arrow', 13,'#ef9e5b' )
         include pug/modules/_table.pug
       include pug/modules/_footer.pug
-    link(rel='stylesheet', href='css/index.min.css')
+    
     script(src='scripts/scripts.min.js')

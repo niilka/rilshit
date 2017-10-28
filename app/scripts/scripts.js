@@ -31,3 +31,48 @@ $('.chat-bar-collapse').click(function () {
     $('.chat-bar').removeClass('is-large');
   }
 });
+
+$(".profile-nickname").hover(
+  function () {
+    $('.profile-popup').addClass('show');
+  },
+  function () {
+    $('.profile-popup').removeClass('show');
+  }
+);
+
+$(".profile-popup").hover(
+  function () {
+    $('.profile-popup').addClass('show');
+  },
+  function () {
+    $('.profile-popup').removeClass('show');
+  }
+);
+
+$('.show-bets').click(function () {
+  $('.all-bets').toggleClass('visible');
+  setHeight();
+});
+
+
+function calcHeight() {
+  var windowHeight = $(window).height();
+  var headerHeight = $('.site-header').height();
+  var footerHeight = $('.site-footer').height();
+  var betsHeight = $('.all-bets').height();
+  var resultHeight = windowHeight - headerHeight - footerHeight - betsHeight;
+  return resultHeight;
+}
+
+function setHeight() {
+  $('.window-plate').height(calcHeight());
+  $('.left-bar').height(calcHeight());
+  $('.rooms').height(calcHeight() - 29);
+}
+
+$(window).resize(function () {
+  setHeight();
+});
+
+setHeight();
