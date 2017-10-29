@@ -1,14 +1,14 @@
 $('.left-bar-collapse').click(function () {
   if ($('.left-bar').hasClass('iscollapsed')) {
     $('.left-bar').removeClass('iscollapsed');
-    $('.left-bar').addClass('large');
+    $('.left-bar').addClass('is-large');
     $('.room-info').css('display', 'block');
     $('.links').addClass('large');
   } else {
     $('.left-bar').addClass('iscollapsed');
-    $('.left-bar').removeClass('large');
+    $('.left-bar').removeClass('is-large');
     $('.room-info').css('display', 'none');
-    $('.links').removeClass('large');
+    $('.links').removeClass('is-large');
   }
 });
 

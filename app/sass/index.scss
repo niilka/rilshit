@@ -103,31 +103,6 @@
             }
         }
     }
-    .language-picker {
-        display: inline-flex;
-        height: 100%;
-        vertical-align: top;
-        align-items: center;
-        margin-left: 48px;
-        display: none;
-        .language {
-            display: inline-block;
-            color: #b9b9b9;
-            font-weight: 300;
-            font-size: 20px;
-            position: relative;
-            text-decoration: none;
-            .globe {
-                vertical-align: middle;
-                padding-right: 5px;
-            }
-            .more {
-                position: absolute;
-                right: -14px;
-                top: -1px;
-            }
-        }
-    }
     .profile {
         display: inline-flex;
         vertical-align: top;
@@ -175,31 +150,26 @@
     position: absolute;
     box-shadow: 15px 0px 163px -31px rgba(0, 0, 0, 0.75);
     transition: all 0.1s ease-out;
+    width: 97px;
     .top-line {
         background-color: #333333;
         height: 29px;
         width: 100%;
         display: flex;
-    }
-    &.iscollapsed {
-        width: 97px;
-        .top-line {
-            justify-content: center;
-            .left-bar-collapse {
-                padding-top: 2px;
-            }
-        }
-        .rooms {
-            overflow: hidden;
+        justify-content: center;
+        .left-bar-collapse {
+            padding-top: 2px;
+            transition: all 0.2s ease-out;
         }
     }
-    &.large {
+    &.is-large {
         width: 303px;
         .top-line {
             justify-content: flex-end;
             .left-bar-collapse {
                 padding-top: 2px;
                 margin-right: 20px;
+                transform: rotate(180deg);
             }
         }
         .rooms {
@@ -208,6 +178,7 @@
     }
     .rooms {
         height: 462px;
+        overflow: hidden;
         .room {
             padding-top: 7px;
             padding-bottom: 7px;
