@@ -262,6 +262,190 @@
             }
         }
     }
+    .roulette {
+        height: 86px;
+        width: 100%;
+        background-color: #e5e5e5;
+        border-top: 1px solid #9d9f9f;
+        border-bottom: 1px solid #9d9f9f;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        .lot {
+            width: 153px;
+            display: inline-block;
+            height: 74px;
+            border-right: 1px solid #d0d0d0;
+            .nickname {
+                text-align: center;
+                font-size: 17px;
+                font-weight: 700;
+                color: #646464;
+                line-height: 17px;
+                margin: 0;
+                margin-top: 4px;
+                margin-bottom: 4px;
+            }
+            .avatar {
+                margin-left: 8px;
+                width: 48px;
+                height: 48px;
+            }
+            .stats {
+                display: inline-flex;
+                flex-direction: column;
+                vertical-align: top;
+                margin-top: 3px;
+                margin-left: 6px;
+                &>span {
+                    font-size: 11px;
+                    color: #8c8c8c;
+                    text-align: center;
+                    background-color: #f0f0f0;
+                    border-radius: 15px;
+                    border: 1px solid #c4c4c4;
+                    &.bet {
+                        padding: 1px 6px;
+                        margin-bottom: 2px;
+                        &::before {
+                            font-family: BTC;
+                            content: "B "
+                        }
+                    }
+                    &.diag {
+                        padding: 1px 4px;
+                        .icon {
+                            position: relative;
+                            display: inline-block;
+                            top: 2px;
+                            padding-right: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .timer {
+        position: relative;
+        display: flex;
+        margin: auto;
+        width: 400px;
+        height: 100px;
+        margin-top: 50px;
+        justify-content: center;
+        align-items: center;
+        background-color: #e5e5e5;
+        border: 1px solid #9d9f9f;
+        font-size: 70px;
+        .minutes {
+            position: relative;
+            padding-right: 30px;
+            color: #9d9f9f;
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                top: 7px;
+                width: 1px;
+                height: 100px;
+                background-color: #9d9f9f;
+            }
+        }
+        .seconds {
+            padding-left: 30px;
+            color: #9d9f9f;
+        }
+    }
+    .prize {
+        width: 400px;
+        height: 40px;
+        background-color: #e5e5e5;
+        border: 1px solid #9d9f9f;
+        border-top: 0px solid #000;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #9d9f9f;
+        span {
+            &::before {
+                font-family: BTC;
+                content: "B";
+                padding-right: 5px;
+            }
+        }
+    }
+    .user-stats {
+        margin: auto;
+        display: flex;
+        width: 400px;
+        height: 40px;
+        background-color: #e5e5e5;
+        border: 1px solid #9d9f9f;
+        border-top: 0px solid #000;
+        &>span {
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+            line-height: 2.4;
+            &.balance {
+                position: relative;
+                &::before {
+                    content: "B";
+                    font-family: BTC;
+                    padding-right: 5px;
+                }
+                &::after {
+                    content: "";
+                    width: 1px;
+                    height: 40px;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    background-color: #9d9f9f;
+                }
+            }
+            &.coef {
+                &::before {
+                    content: "B";
+                    font-family: BTC;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+    .place-bet {
+        background-color: #e5e5e5;
+        border: 1px solid #9d9f9f;
+        border-top: 0px solid #000;
+        width: 400px;
+        height: 40px;
+        margin: auto;
+        input {
+            outline: none;
+            border: none;
+            height: 100%;
+            width: 50%;
+            background-color: darken(#e5e5e5, 3%);
+            border-right: 1px solid #9d9f9f;
+            text-align: center;
+        }
+        .bet-buttons {
+            display: inline-flex;
+            a {
+                text-decoration: none;
+                width: 50%;
+                text-align: center;
+                height: 40px;
+                &.bet {
+                    background-color: red;
+                }
+            }
+        }
+    }
 }
 
 .top-bar {

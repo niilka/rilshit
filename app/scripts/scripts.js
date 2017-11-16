@@ -76,3 +76,95 @@ $(window).resize(function () {
 });
 
 setHeight();
+
+
+// Roulette
+
+if (!String.prototype.format) {
+  String.prototype.format = function () {
+    var args = arguments;
+    return this.replace(/{(\d+)}/g, function (match, number) {
+      return typeof args[number] != 'undefined' ?
+        args[number] :
+        match;
+    });
+  };
+}
+$(window).load(function () {
+  console.log('Window loaded!');
+
+  var $roulette = $('#roulette-images-list');
+  $roulette.html(generateRouletteImages(200));
+
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function getPositionOfWinner(winner) {
+    var widthOfImg = $('#roulette-img0').width();
+    var minDistanceToEdgeAllowed = 4;
+
+    var desiredImg = $('#roulette-img' + winner.toString());
+
+    var minPos = desiredImg.position().left + minDistanceToEdgeAllowed;
+    var maxPos = desiredImg.position().left + widthOfImg - minDistanceToEdgeAllowed;
+
+    console.log('Position.Left: {0} | Offset().left: {1}'.format(desiredImg.position().left, desiredImg.offset().left));
+    return getRandomInt(minPos, maxPos);
+  }
+
+  function printLeftOfRouletteSpinner() {
+    var pos = $('#roulette-images-list').position().left;
+    if (pos % 100 == 0) console.log(pos);
+  }
+
+  function timelineFinished(destImg) {
+    // this is where you highlight your winner
+    $('#roulette-img' + destImg).css({
+      border: '3px solid red'
+    });
+  }
+
+  function rouletteSpin(destImg) {
+    if (!destImg) destImg = 40;
+    var tl = new TimelineMax({
+        onUpdate: printLeftOfRouletteSpinner,
+        onComplete: timelineFinished,
+        onCompleteParams: [destImg]
+      }),
+      rouletteImages = $('#roulette-images-list'),
+      startLeft = rouletteImages.position().left;
+
+    tl //.to(rouletteImages, 0, {x: 5000})
+      .to(rouletteImages, 10, {
+        x: getPositionOfWinner(destImg) * -1,
+        ease: Power4.easeOut
+      });
+    // .to(rouletteImages, 0, {x: 0}, 11);
+  }
+
+  $('#spin').click(function () {
+    var winner = $('#winner-text').val();
+    //if (isNaN(winner) || winner > 49) alert('Enter 0 through 49');
+    rouletteSpin(winner);
+  });
+
+  function getRandomColor() {
+    return ((1 << 24) * Math.random() | 0).toString(16)
+  }
+
+  function generateRouletteImages(howMany) {
+    var imgTemplate = '<img src="{0}" class="{1}" id="roulette-img{2}">';
+    var imgClass = 'roulette-img';
+    var imgSrcTemplate = 'http://placehold.it/{0}/{1}?text={2}';
+
+    var completedRouletteImages = [];
+    for (var i = 0; i < howMany; i++) {
+      var color = getRandomColor();
+      var imgSrc = imgSrcTemplate.format('80', color, i);
+      var completedTemplate = imgTemplate.format(imgSrc, imgClass, i);
+      completedRouletteImages.push('<li>' + completedTemplate + '</li>');
+    }
+    return completedRouletteImages;
+  }
+});

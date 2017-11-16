@@ -80,6 +80,34 @@ html(lang='ru')
         .roulette-plate
           .top-line
             a(href="#").room-name Room #34 - Game mode Name - Players 9/10
+          .roulette
+            .lot
+              h1.nickname Winky Eye
+            .lot
+              h1.nickname Winky Eye
+              img.avatar(src="images/roulette/avatar.png")
+              .stats
+                span.bet 0,0000007
+                span.diag
+                  +svg-icon('diag',13,'#8c8c8c')
+                  span 0,03%
+          .timer
+            .minutes
+              span 07
+            .seconds
+              span 46
+          .prize
+            span 005,4646446
+          .user-stats
+            span.balance 1
+            span.coef 100%
+          .place-bet 
+            input(type="text", placeholder="Place Your bet...")
+            .bet-buttons
+              a.bet(href="#") Bet
+              a.bet-all(href="#") Bet All
+          
+
       aside.top-bar.is-collapsed
         .top-line
           a(href="#").top-bar-collapse
