@@ -5,7 +5,9 @@
 @import "media";
 .site {
     margin: 0 auto;
-    position: relative; //max-width: 1136px;
+    position: relative;
+    max-width: 1336px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .container {
@@ -14,6 +16,7 @@
 }
 
 .site-header {
+    position: relative;
     height: 97px;
     width: 100%;
     display: flex;
@@ -34,6 +37,7 @@
         }
     }
     .header-title {
+        position: relative;
         font-family: 'Ubuntu';
         display: inline-flex;
         flex-direction: column;
@@ -47,6 +51,7 @@
         .main-title {
             font-weight: 700;
             margin: 0;
+            padding-left: 40px;
             margin-top: -10px;
             font-size: 44px;
             transform: skewX(-10deg);
@@ -66,6 +71,8 @@
         }
     }
     .header-stats {
+        position: absolute;
+        right: 300px;
         display: inline-flex;
         flex-direction: column;
         height: 100%;
@@ -104,6 +111,8 @@
         }
     }
     .profile {
+        position: absolute;
+        right: 80px;
         display: inline-flex;
         vertical-align: top;
         height: 100%;
@@ -145,6 +154,7 @@
 }
 
 .left-bar {
+    z-index: 1;
     background-color: #4d4d4d;
     height: 622px;
     position: absolute;
@@ -173,7 +183,7 @@
             }
         }
         .rooms {
-            overflow-x: auto;
+            overflow-y: scroll;
         }
     }
     .rooms {
@@ -239,209 +249,79 @@
 .window-plate {
     background-color: #c6c6c6;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%238b8b8b' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-}
-
-.roulette-plate {
-    width: 100%;
-    .top-line {
-        height: 29px;
-        width: 100%;
-        background-color: #3b3b3b;
-        font-size: 13px;
-        font-weight: 700;
-        color: #8c8c8c;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .room-name {
-            text-decoration: none;
-            color: #8c8c8c;
-            &:hover {
-                color: lighten(#8c8c8c, 10%);
-            }
-        }
-    }
-    .roulette {
-        height: 86px;
-        width: 100%;
-        background-color: #e5e5e5;
-        border-top: 1px solid #9d9f9f;
-        border-bottom: 1px solid #9d9f9f;
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        .lot {
-            width: 153px;
-            display: inline-block;
-            height: 74px;
-            border-right: 1px solid #d0d0d0;
-            .nickname {
+    .roulette-plate {
+        padding-top: 20px;
+        .roulette {
+            background-color: #e4e4e4;
+            width: 100%;
+            height: 90px;
+            border-top: 1px solid #a2a3a3;
+            border-bottom: 1px solid #a2a3a3;
+            overflow: hidden;
+            .users {
                 text-align: center;
-                font-size: 17px;
-                font-weight: 700;
-                color: #646464;
-                line-height: 17px;
-                margin: 0;
-                margin-top: 4px;
-                margin-bottom: 4px;
-            }
-            .avatar {
-                margin-left: 8px;
-                width: 48px;
-                height: 48px;
-            }
-            .stats {
-                display: inline-flex;
-                flex-direction: column;
-                vertical-align: top;
-                margin-top: 3px;
-                margin-left: 6px;
-                &>span {
-                    font-size: 11px;
-                    color: #8c8c8c;
-                    text-align: center;
-                    background-color: #f0f0f0;
-                    border-radius: 15px;
-                    border: 1px solid #c4c4c4;
-                    &.bet {
-                        padding: 1px 6px;
-                        margin-bottom: 2px;
-                        &::before {
-                            font-family: BTC;
-                            content: "B "
-                        }
-                    }
-                    &.diag {
-                        padding: 1px 4px;
-                        .icon {
-                            position: relative;
-                            display: inline-block;
-                            top: 2px;
-                            padding-right: 4px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .timer {
-        position: relative;
-        display: flex;
-        margin: auto;
-        width: 400px;
-        height: 100px;
-        margin-top: 50px;
-        justify-content: center;
-        align-items: center;
-        background-color: #e5e5e5;
-        border: 1px solid #9d9f9f;
-        font-size: 70px;
-        .minutes {
-            position: relative;
-            padding-right: 30px;
-            color: #9d9f9f;
-            &::after {
-                content: "";
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                top: 7px;
-                width: 1px;
-                height: 100px;
-                background-color: #9d9f9f;
-            }
-        }
-        .seconds {
-            padding-left: 30px;
-            color: #9d9f9f;
-        }
-    }
-    .prize {
-        width: 400px;
-        height: 40px;
-        background-color: #e5e5e5;
-        border: 1px solid #9d9f9f;
-        border-top: 0px solid #000;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        color: #9d9f9f;
-        span {
-            &::before {
-                font-family: BTC;
-                content: "B";
-                padding-right: 5px;
-            }
-        }
-    }
-    .user-stats {
-        margin: auto;
-        display: flex;
-        width: 400px;
-        height: 40px;
-        background-color: #e5e5e5;
-        border: 1px solid #9d9f9f;
-        border-top: 0px solid #000;
-        &>span {
-            display: inline-block;
-            width: 50%;
-            text-align: center;
-            line-height: 2.4;
-            &.balance {
                 position: relative;
-                &::before {
-                    content: "B";
-                    font-family: BTC;
-                    padding-right: 5px;
-                }
-                &::after {
-                    content: "";
-                    width: 1px;
-                    height: 40px;
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
-                    background-color: #9d9f9f;
-                }
-            }
-            &.coef {
-                &::before {
-                    content: "B";
-                    font-family: BTC;
-                    padding-right: 5px;
-                }
-            }
-        }
-    }
-    .place-bet {
-        background-color: #e5e5e5;
-        border: 1px solid #9d9f9f;
-        border-top: 0px solid #000;
-        width: 400px;
-        height: 40px;
-        margin: auto;
-        input {
-            outline: none;
-            border: none;
-            height: 100%;
-            width: 50%;
-            background-color: darken(#e5e5e5, 3%);
-            border-right: 1px solid #9d9f9f;
-            text-align: center;
-        }
-        .bet-buttons {
-            display: inline-flex;
-            a {
-                text-decoration: none;
-                width: 50%;
-                text-align: center;
-                height: 40px;
-                &.bet {
-                    background-color: red;
+                transition: all, 0.2s;
+                .user {
+                    vertical-align: top;
+                    margin-top: 4px;
+                    display: inline-block;
+                    width: 150px;
+                    height: 80px;
+                    border-right: 1px solid #cbcbcb;
+                    .nickname {
+                        color: #646464;
+                        text-decoration: none;
+                        font-size: 17px;
+                        display: block;
+                    }
+                    .user-column {
+                        display: inline-flex;
+                        .user-image {
+                            width: 48px;
+                            height: 48px;
+                            background-color: #6c6a69;
+                            border-radius: 20em;
+                            margin-right: 6px;
+                        }
+                        .user-info-bar {
+                            text-align-last: left;
+                            display: flex;
+                            flex-direction: column;
+                            width: 86px;
+                            height: 48px;
+                            &>span {
+                                margin-left: 14px;
+                                width: 66px;
+                                font-size: 12px;
+                                color: #8c8c8c;
+                                background-color: #fafafa;
+                                border-radius: 12px;
+                                border: 1px solid #bababa;
+                                display: flex;
+                                justify-content: center;
+                                position: relative;
+                                &>.icon {
+                                    position: absolute;
+                                    left: -16px;
+                                }
+                                &:first-child {
+                                    margin-bottom: 3px;
+                                    &::before {
+                                        content: "B";
+                                        font-family: "BTC";
+                                        position: absolute;
+                                        left: -14px;
+                                    }
+                                }
+                                &:last-child {
+                                    &::after {
+                                        content: "%";
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -557,13 +437,12 @@
             .money {
                 text-decoration: none;
                 color: #646464;
-                background-color: #fafafa;
+                background-color: #333333;
                 border: 1px solid #646464;
-                border-radius: 15px;
                 line-height: 1.2;
                 font-size: 12px;
-                padding: 2px;
-                margin-left: 10px;
+                padding: 3px;
+                margin-left: 20px;
                 font-style: italic;
                 &::after {
                     content: "B";
@@ -587,6 +466,7 @@
 
 .chat-bar {
     position: absolute;
+    z-index: 1;
     right: 0;
     top: 244px;
     background-color: #e6e6e6;
@@ -860,7 +740,7 @@
     background-color: #f7f7f7;
     position: absolute;
     top: 60px;
-    right: 17px;
+    right: -14px;
     border-radius: 6px;
     z-index: 2;
     visibility: hidden;
@@ -904,6 +784,253 @@
                     padding-right: 5px;
                 }
             }
+        }
+    }
+}
+
+.timer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    .progress {
+        width: 400px;
+        height: 80px;
+    }
+    .progress .track,
+    .progress .fill {
+        fill: #eaeaea;
+        stroke-width: 3;
+        transform: rotate(90deg)translate(0px, -80px);
+    }
+    .progress .track {
+        stroke: #eaeaea;
+    }
+    .progress .fill {
+        stroke: #f7931a;
+        stroke-dasharray: 219.99078369140625;
+        stroke-dashoffset: -219.99078369140625;
+        transition: stroke-dashoffset 1s;
+    }
+    .progress .value,
+    .progress .text {
+        font-family: 'Open Sans';
+        fill: #f7931a;
+        text-anchor: middle;
+    }
+    .progress .text {
+        font-size: 12px;
+    }
+}
+
+.bet-control {
+    width: 320px;
+    height: 70px;
+    margin: auto;
+    .bet-info {
+        display: flex;
+        justify-content: space-between;
+        &>span {
+            color: #8c8c8c;
+            background-color: #d9d9d9;
+            border-radius: 20px;
+            width: 73px;
+            height: 25px;
+            border: 1px solid #b4b4b4;
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            &.btc {
+                margin-left: 30px;
+                &::before {
+                    content: "B";
+                    font-family: 'BTC';
+                    position: absolute;
+                    left: -17px;
+                    top: -3px;
+                    font-size: 17px;
+                }
+            }
+            &.chance {
+                margin-right: 30px;
+            }
+            &>.icon {
+                position: absolute;
+                left: -23px;
+                top: 2px;
+            }
+        }
+    }
+}
+
+.bet-place {
+    margin: auto;
+    padding-top: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    .bet-value {
+        width: 150px;
+        height: 30px;
+        border-radius: 4px;
+        background-color: #d9d9d9;
+        border: 1px solid #39b54a;
+        color: #aaaaaa;
+        padding: 4px;
+    }
+    .bet,
+    .bet-all {
+        width: 70px;
+        height: 30px;
+        border-radius: 4px;
+        background-color: #44b347;
+        border: 1px solid #30a033;
+        border-bottom: 3px solid #30a033;
+        &.bet-all {
+            width: 90px;
+        }
+        &:hover {
+            background-color: lighten(#44b347, 3%);
+            cursor: pointer;
+        }
+        &:active {
+            background-color: darken(#44b347, 10%);
+        }
+    }
+}
+
+.settings-plate {
+    width: 549px;
+    height: 550px;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    margin: auto;
+    margin-top: 40px;
+    .tab-content.profile {
+        &>div {
+            display: inline-block;
+            vertical-align: top;
+            width: 49%; //FIX
+        }
+        .profile-left {
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .deposit-buttons>a {
+                display: inline-block;
+                width: 90px;
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid #30a033;
+                background-color: #44b347;
+                text-decoration: none;
+                text-align: center;
+                text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21);
+                color: #e6e6e6;
+                font-size: 14px;
+                font-weight: 500;
+                font-style: italic;
+                line-height: 24px;
+                &:hover {
+                    background-color: lighten(#44b347, 3%);
+                    cursor: pointer;
+                }
+                &:active {
+                    background-color: darken(#44b347, 10%);
+                }
+                &:first-child {
+                    margin-right: 4px;
+                }
+            }
+            .balance {
+                padding-top: 12px;
+                margin-bottom: 10px;
+                .balance-title {
+                    display: block;
+                    color: #646464;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 24px;
+                }
+                .balance-value {
+                    text-align: center;
+                    display: block;
+                    color: #646464;
+                    font-family: Ubuntu;
+                    font-size: 14px;
+                    font-weight: 500;
+                    font-style: italic;
+                    line-height: 24px;
+                    text-transform: uppercase;
+                    &::before {
+                        content: "B";
+                        font-family: "BTC";
+                        padding-right: 2px;
+                    }
+                }
+            }
+        }
+        .profile-right {
+            .activity {
+                margin-top: 230px;
+                margin-left: 40px;
+                text-align: center;
+                &>span {
+                    font-weight: 700;
+                    display: block;
+                    color: #646464;
+                    &>span {
+                        font-weight: 400;
+                    }
+                }
+            }
+            .nickname {
+                color: #646464;
+                font-family: Ubuntu;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 25px;
+                display: block;
+                margin-top: 10px;
+                margin-bottom: 14px;
+            }
+            &>span {
+                font-size: 18px;
+                color: #646464;
+                font-weight: 700;
+                display: block;
+                &>span {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    .tabs-controls {
+        height: 28px; // display: flex;
+        // flex-direction: row;
+        // justify-content: space-around;
+        &>a {
+            display: inline-block;
+            border-radius: 4px;
+            width: 50%;
+            text-align: center;
+            cursor: pointer;
+        }
+        &>.active {
+            color: #646464;
+            font-family: Ubuntu;
+            font-size: 17px;
+            font-weight: 500;
+            background-color: #e6e6e6;
+        }
+        &>.inactive {
+            color: #dbdbdb;
+            font-family: Ubuntu;
+            font-size: 17px;
+            font-weight: 500;
+            background-color: #a1a1a1;
         }
     }
 }

@@ -1,0 +1,191 @@
+include pug/utilites/utilites.pug
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    title Title
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(property='og:image', content='path/to/image.jpg')
+    link(rel='shortcut icon', href='images/favicon/favicon.ico', type='image/x-icon')
+    link(rel='apple-touch-icon', href='img/favicon/apple-touch-icon.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='img/favicon/apple-touch-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='img/favicon/apple-touch-icon-114x114.png')
+    // Chrome, Firefox OS and Opera
+    meta(name='theme-color', content='#000')
+    // Windows Phone
+    meta(name='msapplication-navbutton-color', content='#000')
+    // iOS Safari
+    meta(name='apple-mobile-web-app-status-bar-style', content='#000')
+    link(rel='stylesheet', href='css/index.min.css')
+  body
+    main.site
+      include pug/modules/_header.pug
+      aside.left-bar
+        .top-line
+          a(href="#").left-bar-collapse
+            +svg-icon('right-arrow',13,'#ef9e5b')
+        .rooms
+          button.start start
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
+          .room
+            .room-logo
+              img(src="images/left-bar/room-logo.png")
+            .room-info
+              a.room-title Game mode Name
+              a.room-description Short description
+      .window-plate
+        .settings-plate
+          .tabs-controls
+            a.profile-tab.active Profile
+            a.settings-tab.inactive Settings
+          .tab-content.profile
+            .left-col
+              .profile-left
+                img(alt='Change avatar' src='images/icons/no_avatar.png').change-profile-avatar
+                .balance
+                  span.balance-title Current Balance
+                  span.balance-value 0,0124586
+                .deposit-buttons
+                  a.deposit(href="#") Deposit
+                  a.withdraw(href="#") Withdraw
+            .right-col
+              .profile-right
+                span.nickname Your Nickname
+                span.date-of-birth Date of Birth - 
+                  span 14/12/1964
+                span.country Country - 
+                  span Zimbabwe.
+                span.language Language - 
+                  span Chibarwe, English, Kalanga.
+                span.about About me - 
+                  span Zimbabwe has 16 official languages.
+                .activity
+                  span.last-activity Last activity -
+                    span 14/12/2017
+                  span.member-since Member Since -
+                    span 12/10/2017
+          .tab-content.settings
+            .left-col
+              .settings-left
+            .right-col
+              .settings-left
+
+      aside.top-bar.is-collapsed
+        .top-line
+          a(href="#").top-bar-collapse
+            +svg-icon('left-arrow',13,'#ef9e5b')
+          a(href="#").top-bar-title Today's Top
+        span.top-bar-label TOP
+        ul.peoples
+          li.last-winner
+            .left-line
+              +svg-icon('king',13,'#c31818')
+            a(href="#").nickname nickname
+            a(href="#").money 0,100000
+          li.biggest-bet
+            .left-line
+              +svg-icon('coins',13,'#e78b1c')
+            a(href="#").nickname nickname
+            a(href="#").money 0,100000
+          li.highest-bet
+            .left-line
+              +svg-icon('money-bag',13,'#44b347')
+            a(href="#").nickname nickname
+            a(href="#").money 0,100000
+        a.top-of-all(href="#") Top of All Time
+      aside.chat-bar.is-collapsed
+        .top-line
+          a(href="#").chat-bar-collapse
+            +svg-icon('left-arrow',13,'#ef9e5b')
+          a(href="#").chat-bar-title Chat
+        span.chat-bar-label Chat
+        .messages
+          .message-block
+            .user-meta
+              a(href="#").nickname Shocked Face
+              time.message-time 20:15
+            p.message Mom, Get the Camera!
+          .message-block
+            .user-meta
+              a(href="#").nickname Shocked Face
+              time.message-time 20:15
+            p.message Mom, Get the Camera!
+          .message-block
+            .user-meta
+              a(href="#").nickname Shocked Face
+              time.message-time 20:15
+            p.message Mom, Get the Camera!
+          .message-block
+            .user-meta
+              a(href="#").nickname Shocked Face
+              time.message-time 20:15
+            p.message Mom, Get the Camera!
+          .message-block
+            .user-meta
+              a(href="#").nickname Shocked Face
+              time.message-time 20:15
+            p.message Mom, Get the Camera!
+          .message-block
+            .user-meta
+              a(href="#").nickname Shocked Face
+              time.message-time 20:15
+            p.message Learn from yesterday, live for today, hope for tomorrow. The important things is not to stop betting.
+          .message-block
+            .user-meta
+              a(href="#").nickname Shocked Face
+              time.message-time 20:15
+            p.message 93% of the people who quit too soon are employed by the 3% who never gave up.
+        .message-sent
+          input(type="text", placeholder="Type a message here...").message-input 
+      .all-bets.visible
+        a.show-bets
+          +svg-icon('left-arrow', 13,'#ef9e5b' )
+        include pug/modules/_table.pug
+      include pug/modules/_footer.pug
+    
+    script(src='scripts/scripts.min.js')
+    script(src='scripts/roulette.js')

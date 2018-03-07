@@ -63,7 +63,7 @@ gulp.task('scripts', function () {
   return gulp.src([
       'app/libs/jquery.js',
       'app/libs/slimscroll.js',
-      'app/scripts/scripts.js',
+      'app/scripts/scripts.js'
     ])
     .pipe(concat('scripts.min.js'))
     .pipe(uglify())
